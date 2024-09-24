@@ -17,12 +17,12 @@ func commandCatch(cfg *config, args ...string) error {
 	}
 
 	caught := fmt.Sprintf("%s escaped!", pokemon.Name)
-	if pokemon.BaseExperience < 100 {
-		caught = fmt.Sprintf("%s was caught!")
+	if pokemon.BaseExperience > 100 {
+		caught = fmt.Sprintf("%s was caught!", pokemon.Name)
 		cfg.pokedex[name] = pokemon
 	}
 
-	fmt.Printf("Throwing a Pokeball at %s...", pokemon.Name)
+	fmt.Printf("Throwing a Pokeball at %s... \n", pokemon.Name)
 	fmt.Println(caught)
 
 	return nil
